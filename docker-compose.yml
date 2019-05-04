@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  terraform-utils:
+    image: dnxsolutions/terraform:0.0.3
+    volumes:
+      - .:/work
+      - ~/.aws:/root/.aws
+      - ~/.ssh:/root/.ssh
+    working_dir: /code
