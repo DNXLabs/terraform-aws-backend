@@ -1,5 +1,5 @@
 data "aws_iam_policy_document" "iam-role-policy-restricted" {
-  count = "${length(var.workspaces)}"
+  count = length(var.workspaces)
 
   statement {
     actions   = ["s3:ListBucket"]
@@ -46,7 +46,7 @@ data "aws_iam_policy_document" "backend-assume-role-all" {
 }
 
 data "aws_iam_policy_document" "backend-assume-role-restricted" {
-  count = "${length(var.workspaces)}"
+  count = length(var.workspaces)
 
   statement {
     actions = ["sts:AssumeRole"]

@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "backend" {
   bucket = "${var.bucket_prefix}-terraform-backend"
-  region = "${var.bucket_region}"
+  region = var.bucket_region
   acl    = "private"
 
   versioning {
@@ -10,14 +10,14 @@ resource "aws_s3_bucket" "backend" {
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
-        sse_algorithm = "${var.bucket_sse_algorithm}"
+        sse_algorithm = var.bucket_sse_algorithm
       }
     }
   }
 }
 
 resource "aws_s3_bucket_public_access_block" "backend" {
-  bucket = "${aws_s3_bucket.backend.id}"
+  bucket = aws_s3_bucket.backend.id
 
   block_public_acls       = true
   block_public_policy     = true
