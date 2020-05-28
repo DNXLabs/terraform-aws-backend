@@ -19,14 +19,8 @@ It is also expected that you check the statefile for this module into git to avo
 | terraform-backend | IAM Role | Role created that has access to all terraform workspaces |
 | terraform-backend-\<workspace> | IAM Role | Role created that only has access to the specified workspace |
 
-## Inputs
-| Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| bucket\_prefix | A prefix applied to the S3 bucket created to ensure a unique name. | string | n/a | yes |
-| bucket\_region | The region to create the S3 bucket in | string | n/a | yes |
-| bucket\_sse\_algorithm | Encryption algorithm to use on the S3 bucket. Currently only AES256 is supported | string | `"AES256"` | no |
-| workspaces | A list of terraform workspaces that IAM Roles/Policy will be created for | list | n/a | yes |
-| assume\_policy | A map that allows you to specify additional AWS principles that will be added to the backend roles assume role policy | map | `{}` | no
+<!--- BEGIN_TF_DOCS --->
+<!--- END_TF_DOCS --->
 
 ## Assume Role Policy
 The assume_role_policy by default will be set to the current account ID. This is primarily so can you can use the roles while your 'identity' account is under construction. Once your identity account is available you should specify the required assume_role_policy and the default will be removed.
@@ -42,7 +36,7 @@ Due to terraform lookup() only supporting string returns this cant be a list and
 ```
 
 ## Author
-App managed by DNX Solutions.
+Module managed by [DNX Solutions](https://github.com/DNXLabs).
 
 ## License
-Apache 2 Licensed. See LICENSE for full details.
+Apache 2 Licensed. See [LICENSE](https://github.com/DNXLabs/terraform-aws-backend/blob/master/LICENSE) for full details.
