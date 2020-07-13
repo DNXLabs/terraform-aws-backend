@@ -20,6 +20,7 @@ It is also expected that you check the statefile for this module into git to avo
 | terraform-backend-\<workspace> | IAM Role | Role created that only has access to the specified workspace |
 
 <!--- BEGIN_TF_DOCS --->
+
 ## Requirements
 
 | Name | Version |
