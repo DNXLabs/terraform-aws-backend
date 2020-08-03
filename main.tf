@@ -1,6 +1,5 @@
 resource "aws_s3_bucket" "backend" {
   bucket = "${var.bucket_prefix}-terraform-backend"
-  region = var.bucket_region
   acl    = "private"
 
   versioning {
