@@ -39,7 +39,6 @@ It is also expected that you check the statefile for this module into git to avo
 |------|-------------|------|---------|:--------:|
 | assume\_policy | A map that allows you to specify additional AWS principles that will be added to the backend roles assume role policy | `map(string)` | `{}` | no |
 | bucket\_prefix | A prefix applied to the S3 bucket created to ensure a unique name. | `string` | n/a | yes |
-| bucket\_region | The region to create the S3 bucket in | `string` | n/a | yes |
 | bucket\_sse\_algorithm | Encryption algorithm to use on the S3 bucket. Currently only AES256 is supported | `string` | `"AES256"` | no |
 | workspaces | A list of terraform workspaces that IAM Roles/Policy will be created for | `list(string)` | n/a | yes |
 
