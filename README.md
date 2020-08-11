@@ -26,6 +26,7 @@ This modules creates the following resources:
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-backend/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-backend/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-backend)](https://github.com/DNXLabs/terraform-aws-backend/blob/master/LICENSE)
 
+More Information: https://dnxlabs.slab.com/public/7tk9j2m9
 
 
 ## Resources
