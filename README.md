@@ -22,11 +22,12 @@ This modules creates the following resources:
 - Identity and Access Management (IAM) - Backend All -  Role that Allows access to all Terraform workspaces
 - Identity and Acesss Management (IAM) - Backend restricted - These roles are limited to their specific workspace through the use of S3 resource permissions
 
+More Information: https://dnxlabs.slab.com/public/7tk9j2m9
 
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-backend/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-backend/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-backend)](https://github.com/DNXLabs/terraform-aws-backend/blob/master/LICENSE)
 
-More Information: https://dnxlabs.slab.com/public/7tk9j2m9
+
 
 
 ## Resources
