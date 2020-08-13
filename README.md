@@ -1,15 +1,15 @@
 # terraform-aws-backend
 
-Terraform-aws-backend is a terraform module that implements what is describe in the Terraform S3 Backend [documentation](https://www.terraform.io/docs/backends/types/s3.html)
+[![Lint Status](https://github.com/DNXLabs/terraform-aws-backend/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-backend/actions)
+[![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-backend)](https://github.com/DNXLabs/terraform-aws-backend/blob/master/LICENSE)
+
+This terraform module implements what is described in the Terraform S3 Backend [documentation](https://www.terraform.io/docs/backends/types/s3.html)
 
 S3 Encryption is enabled and Public Access policies used to ensure security.
 
 This module is expected to be deployed to a 'master' AWS account so that you can start using remote state as soon as possible. As this module creates the remote state backend, its statefile needs to be commited to git as it cannot be stored remotely. No sensetive information should be present in this file.
 
 It is also expected that you check the statefile for this module into git to avoid the chicken and egg problem.
-
-This module requires:
- - Terraform Version >=0.12.20
 
 This modules creates the following resources:
  - Encrypted S3 Bucket - Used to store Terraform state files
@@ -21,13 +21,6 @@ This modules creates the following resources:
 - AWS DynamoDB Table - Used for workspace locking
 - Identity and Access Management (IAM) - Backend All -  Role that Allows access to all Terraform workspaces
 - Identity and Acesss Management (IAM) - Backend restricted - These roles are limited to their specific workspace through the use of S3 resource permissions
-
-More Information: https://dnxlabs.slab.com/public/7tk9j2m9
-
-[![Lint Status](https://github.com/DNXLabs/terraform-aws-backend/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-backend/actions)
-[![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-backend)](https://github.com/DNXLabs/terraform-aws-backend/blob/master/LICENSE)
-
-
 
 
 ## Resources
