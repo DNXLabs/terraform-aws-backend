@@ -3,7 +3,7 @@
 [![Lint Status](https://github.com/DNXLabs/terraform-aws-backend/workflows/Lint/badge.svg)](https://github.com/DNXLabs/terraform-aws-backend/actions)
 [![LICENSE](https://img.shields.io/github/license/DNXLabs/terraform-aws-backend)](https://github.com/DNXLabs/terraform-aws-backend/blob/master/LICENSE)
 
-This terraform module implements what is described in the Terraform S3 Backend [documentation](https://www.terraform.io/docs/backends/types/s3.html)
+This terraform module implements what is described in the Terraform S3 Backend [documentation](https://www.terraform.io/docs/backends/types/s3.html).
 
 S3 Encryption is enabled and Public Access policies used to ensure security.
 
@@ -11,7 +11,7 @@ This module is expected to be deployed to a 'master' AWS account so that you can
 
 It is also expected that you check the statefile for this module into git to avoid the chicken and egg problem.
 
-This modules creates the following resources:
+The following resources will be created:
  - Encrypted S3 Bucket - Used to store Terraform state files
    - This bucket
       -  Block public acls
