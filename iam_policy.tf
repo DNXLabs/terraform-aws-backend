@@ -53,7 +53,7 @@ data "aws_iam_policy_document" "backend-assume-role-restricted" {
 
     principals {
       type        = "AWS"
-      identifiers = split(",", lookup(var.assume_policy, "${element(var.workspaces, count.index)}", data.aws_caller_identity.current.account_id))
+      identifiers = split(",", lookup(var.assume_policy, element(var.workspaces, count.index), data.aws_caller_identity.current.account_id))
     }
   }
 }
