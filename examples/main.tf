@@ -1,20 +1,17 @@
-provider "aws" {
-  # the following assumes you've defined a separate profile
-  # named [project] in ~/.aws/credentials  (apart from the 
-  # usual [default])
-  # 
-  profile = "project"
-  region = "ap-southeast-2"
+terraform {
+  required_version = ">= 0.13.0"
 }
 
-module "tf-backend" {
+provider "aws" {
+  region = var.region
+}
+
+module "tf_backend" {
   source = "../"
 
-  bucket_prefix = "example1"
-
+  bucket_prefix        = "example1"
   bucket_sse_algorithm = "AES256"
-
-  workspaces = ["prod", "nonprod", "sandpit"]
+  workspaces           = ["prod", "nonprod", "sandpit"]
 
   assume_policy = {}
 }
