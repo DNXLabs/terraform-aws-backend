@@ -1,20 +1,29 @@
 resource "aws_s3_bucket" "backend" {
   bucket = "${var.bucket_prefix}-terraform-backend"
+}
+
+resource "aws_s3_bucket_acl" "backend" {
+  bucket = aws_s3_bucket.backend.id
   acl    = "private"
+}
 
-  versioning {
-    enabled = true
-  }
+resource "aws_s3_bucket_versioning" "backend" {
+  bucket = aws_s3_bucket.backend.id
 
-  server_side_encryption_configuration {
-    rule {
-      apply_server_side_encryption_by_default {
-        sse_algorithm = var.bucket_sse_algorithm
-      }
-    }
+  versioning_configuration {
+    status = "Enabled"
   }
 }
 
+resource "aws_s3_bucket_server_side_encryption_configuration" "backend" {
+  bucket = aws_s3_bucket.backend.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = var.bucket_sse_algorithm
+    }
+  }
+}
 resource "aws_s3_bucket_public_access_block" "backend" {
   bucket = aws_s3_bucket.backend.id
 
