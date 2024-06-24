@@ -35,15 +35,16 @@ The following resources will be created:
 
 ## Requirements
 
-| Name | Version    |
-|------|------------|
-| terraform | \>= 0.13.0 |
+| Name | Version |
+|------|---------|
+| terraform | >= 0.13.0 |
+| aws | >=4.0.0 |
 
 ## Providers
 
-| Name | Version   |
-|------|-----------|
-| aws | \>= 4.0.0 |
+| Name | Version |
+|------|---------|
+| aws | >=4.0.0 |
 
 ## Inputs
 
