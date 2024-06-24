@@ -2,11 +2,6 @@ resource "aws_s3_bucket" "backend" {
   bucket = "${var.bucket_prefix}-terraform-backend"
 }
 
-resource "aws_s3_bucket_acl" "backend" {
-  bucket = aws_s3_bucket.backend.id
-  acl    = "private"
-}
-
 resource "aws_s3_bucket_versioning" "backend" {
   bucket = aws_s3_bucket.backend.id
 
