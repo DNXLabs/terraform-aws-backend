@@ -9,6 +9,12 @@ variable "bucket_sse_algorithm" {
   default     = "AES256"
 }
 
+variable "kms_master_key_alias" {
+  type        = string
+  description = "The alias of the KMS key to use for S3 server-side encryption. If not provided, S3-managed encryption keys will be used."
+  default     = "alias/aws/s3"
+}
+
 variable "workspaces" {
   type        = list(string)
   description = "A list of terraform workspaces that IAM Roles/Policy will be created for"

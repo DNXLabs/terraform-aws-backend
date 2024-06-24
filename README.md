@@ -53,6 +53,7 @@ The following resources will be created:
 | assume\_policy | A map that allows you to specify additional AWS principles that will be added to the backend roles assume role policy | `map(string)` | `{}` | no |
 | bucket\_prefix | A prefix applied to the S3 bucket created to ensure a unique name. | `string` | n/a | yes |
 | bucket\_sse\_algorithm | Encryption algorithm to use on the S3 bucket. Currently only AES256 is supported | `string` | `"AES256"` | no |
+| kms\_master\_key\_alias | The alias of the KMS key to use for S3 server-side encryption. If not provided, S3-managed encryption keys will be used. | `string` | `"alias/aws/s3"` | no |
 | workspaces | A list of terraform workspaces that IAM Roles/Policy will be created for | `list(string)` | n/a | yes |
 
 ## Outputs
